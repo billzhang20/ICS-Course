@@ -1,7 +1,7 @@
 # angry grandma
 score = 0
+puts("Hello, come talk to Grandma!")
 while score < 3
-  puts("What would you like to say to grandma? ")
   user_input = gets.chomp
   if user_input == user_input.upcase
     if user_input == "BYE"

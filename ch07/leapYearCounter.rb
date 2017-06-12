@@ -11,8 +11,11 @@ while number <= finish
     nice_number = number.to_i
     puts(nice_number)
     number = number+1
+  elsif number%400 == 0
+    nice_number = number.to_i
+    puts(nice_number)
+    number = number+1
   else
     number = number+1
   end
 end
-# hi

@@ -8,6 +8,6 @@ str6 = "Chapter 3: Letters"
 str7 = "page 13"
 
 puts(str1.center(40))
-puts(str2+str3.rjust(32))
-puts(str4+str5.rjust(40))
-puts(str6+str7.rjust(41))
+puts(str2.ljust(20)+str3.rjust(20))
+puts(str4.ljust(20)+str5.rjust(26))
+puts(str6.ljust(20)+str7.rjust(27))

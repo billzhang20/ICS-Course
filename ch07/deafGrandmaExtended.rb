@@ -5,6 +5,7 @@ while score < 3
   user_input = gets.chomp
   if user_input == user_input.upcase
     if user_input == "BYE"
+      puts("NO, NOT SINCE "+actual_year+"!")
       score = score + 1
 
     else

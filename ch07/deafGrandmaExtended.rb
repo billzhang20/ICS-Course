@@ -4,7 +4,12 @@ puts("Hello, come talk to Grandma!")
 while score < 3
   user_input = gets.chomp
   if user_input == user_input.upcase
-    if user_input == "BYE"
+    if user_input == "BYE" and score == 2
+      score = score + 1
+
+    elsif user_input == "BYE"
+      year = rand(21)
+      actual_year = (1930+year).to_s
       puts("NO, NOT SINCE "+actual_year+"!")
       score = score + 1
 

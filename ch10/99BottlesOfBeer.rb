@@ -8,8 +8,8 @@ def english_number number
     return 'zero'
   end
 # No more special cases! No more returns!
-  num_string = '' # This is the string we will return.
-  ones_place = ['one',       'two',      'three',
+  num_string = ''
+  ones_place = ['one',     'two',    'three',
               'four',      'five',     'six',
               'seven',     'eight',    'nine']
   tens_place = ['ten',       'twenty',   'thirty',
@@ -18,22 +18,22 @@ def english_number number
   teenagers  = ['eleven',    'twelve',   'thirteen',
               'fourteen',  'fifteen',  'sixteen',
               'seventeen', 'eighteen', 'nineteen']
-  expanded = [['hundred', 2],
-              ['thousand', 3],
-              ['million', 6],
-              ['billion', 9],
-              ['trillion', 12]]
+  expanded = [['hundred', 100],
+              ['thousand', 1000],
+              ['million', 1000000],
+              ['billion', 1000000000],
+              ['trillion', 1000000000000]]
 
   left = number
   while expanded.length > 0
-    last_pair = expanded.pop
-    name = last_pair[0]
-    base = 10**last_pair[1]
+    last_pair = expanded.pop # deletes last term in expanded list
+    name = last_pair[0] # takes out the place value name
+    base = last_pair[1] # takes out the divisor
     write = left/base
     left = left - write*base
 
     if write > 0
-      first_term = english_number write
+      first_term = english_number write # recursive step
       num_string = num_string + first_term + ' ' + name
 
       if left > 0
@@ -69,12 +69,12 @@ def english_number number
   end
   write = left # How many ones left to write out?
   left = 0 # Subtract off those ones.
-    if write > 0
-      num_string = num_string + ones_place[write-1] # The "-1" is because ones_place[3] is
+  if write > 0
+    num_string = num_string + ones_place[write-1] # The "-1" is because ones_place[3] is
 # 'four', not 'three'.
-    end
+  end
   #  Now we just return "num_string"...
-    num_string
+  num_string
 end
 
 

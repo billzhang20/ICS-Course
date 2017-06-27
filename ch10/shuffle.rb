@@ -19,7 +19,7 @@ def recursive_shuffle user_list, shuffled_list, run_time
   #recursion steps
   u_length.times do |x|
     r1 = rand(u_length)
-    shuffled_list[x-1] = user_list[r1]
+    shuffled_list[x] = user_list[r1]
   end
 
   run_time = run_time+1

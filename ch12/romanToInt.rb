@@ -63,6 +63,7 @@ def romanToInt roman_numeral
   return year
 end
 
+# from new_roman_numeral program
 def new_roman_numeral numeral
   nlist = []
   while numeral > 0

@@ -1,14 +1,40 @@
 puts("What year were you born? ")
-year = gets.chomp.to_i
+begin
+  year = Integer(gets.chomp)
+rescue
+  puts("Invalid input!")
+  exit
+end
 
 puts("What month were you born? ")
-month = gets.chomp.to_i
+begin
+  month = Integer(gets.chomp)
+rescue
+  puts("Invalid input!")
+  exit
+end
+
 
 puts("What day were you born? ")
-day = gets.chomp.to_i
+begin
+  day = Integer(gets.chomp)
+rescue
+  puts("Invalid input!")
+  exit
+end
+
+if year < 0 or month <= 0 or month > 12 or day <= 0 or day > 31
+  puts("Invalid input!")
+  exit
+end
 
 born = Time.gm(year, month, day)
 today = Time.new
+
+if born > today
+  puts("Invalid date!")
+  exit
+end
 
 count = -1
 while born < today

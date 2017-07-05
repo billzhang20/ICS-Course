@@ -1,18 +1,48 @@
 puts("What year were you born? ")
-year = gets.chomp.to_i
+begin
+  year = Integer(gets.chomp)
+rescue
+  puts("Invalid input!")
+  exit
+end
 
 puts("What month were you born? ")
-month = gets.chomp.to_i
+begin
+  month = Integer(gets.chomp)
+rescue
+  puts("Invalid input!")
+  exit
+end
+
+if month > 12 or month < 0 or year < 0
+  puts("Invalid input!")
+  exit
+end
 
 puts("What day were you born? ")
 day = gets.chomp.to_i
 
-puts("What time were you born (hr:min:sec) (input in military time)? ")
+if day > 31 or day < 0
+  puts("Invalid input!")
+  exit
+end
+
+puts("What time were you born (input = hr:min:sec) (input in military time)? ")
 t_input = gets.chomp
 t_list = t_input.split(":")
-hour = t_list[0].to_i
-min = t_list[1].to_i
-sec = t_list[2].to_i
+begin
+  hour = Integer(t_list[0])
+  min = Integer(t_list[1])
+  sec = Integer(t_list[2])
+rescue
+  puts("Invalid input!")
+  exit
+end
+
+if hour > 24 or hour < 0 or min > 60 or min < 0 or sec > 60 or sec < 0
+  puts("Invalid input!")
+  exit
+end
 
 born = Time.gm(year, month, day, hour, min, sec)
 

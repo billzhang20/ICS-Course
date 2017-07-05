@@ -18,7 +18,7 @@ pic_names.each do |name|
     "#{batch_name}#{pic_number}.jpg"
   end
 
-  if exists?("#{batch_name}0#{pic_number}") == false or exists?("#{batch_name}#{pic_number}.jpg") == false
+  if exists?(new_name) == false
     File.rename name, new_name
   else
     puts("Found file with the same name, would you like to overwrite it? (y or n) ")

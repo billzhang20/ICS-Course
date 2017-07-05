@@ -1,17 +1,17 @@
 def ring (&block)
-  block.call
+  if Time.new.hour <= 0
+    x = Time.new.hour
+  else
+    x = Time.new.hour - 12
+  end
+
+  puts(x)
+  x.times do
+    block.call
+  end
+
 end
 
 ring do
-  if Time.new.hour <= 0
-    x = Time.new.hour
-    puts(x)
-  else
-    x = Time.new.hour - 12
-    puts(x)
-  end
-
-  x.times do
-    puts("DONG!")
-  end
+  puts("DONG!")
 end

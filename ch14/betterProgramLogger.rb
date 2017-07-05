@@ -3,23 +3,25 @@ $indent = 0
 
 def logger (description, &block)
   puts(" "*$indent+ "Beginning #{description} block...")
-  puts(" "*$indent+ "#{description} block finished, returning...")
-  block.call
+  print(" "*$indent+ "#{description} block finished, returning...")
+  x = block.call
+  puts(x)
   puts
+
 end
 
 logger 'Outer ' do
   $indent = $indent + 2
   logger "Return 5" do
-    5.times do
-      puts(" "*$indent+ "5")
-    end
+
+    puts(" "*$indent+ "5"*5)
+
   end
 
   $indent = $indent + 2
   logger "Return 6" do
-    6.times do
-      puts(" "*$indent+ "6")
-    end
+
+    puts(" "*$indent+ "6"*6)
+
   end
 end

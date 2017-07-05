@@ -1,19 +1,17 @@
 def logger (description, &block)
   puts("Starting outer block!")
   puts("Beginning #{description} block...")
-  puts("#{description} block finished, returning...")
-  block.call
+  print("#{description} block finished, returning... ")
+  x = block.call
+  puts(x)
+  puts("Outer block finished!")
   puts
 end
 
 logger "Return 5" do
-  5.times do
-    puts("5")
-  end
+  print("5"*5)
 end
 
 logger "Return 6" do
-  6.times do
-    puts("6")
-  end
+  print("6"*6)
 end

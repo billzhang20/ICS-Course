@@ -107,41 +107,32 @@ end
 puts("What would you like to name your dragon? ")
 name = gets.chomp
 
-dragon1 = Dragon.new name 
+dragon1 = Dragon.new name
 
-puts("What would you like to do with your dragon? (Feed, Walk, Put to Bed, Toss, Rock, Exit)")
-answer = gets.chomp
+answer = ''
 
 while answer != "Exit"
+  puts("What would you like to do with your dragon? (Feed, Walk, Put to Bed, Toss, Rock, Exit)")
+  answer = gets.chomp
   if answer == "Feed"
     dragon1.feed
-    puts("What would you like to do with your dragon? (Feed, Walk, Put to Bed, Toss, Rock, Exit)")
-    answer = gets.chomp
 
   elsif answer == "Walk"
     dragon1.walk
-    puts("What would you like to do with your dragon? (Feed, Walk, Put to Bed, Toss, Rock, Exit)")
-    answer = gets.chomp
 
   elsif answer == "Put to Bed"
     dragon1.put_to_bed
-    puts("What would you like to do with your dragon? (Feed, Walk, Put to Bed, Toss, Rock, Exit)")
-    answer = gets.chomp
 
   elsif answer == "Toss"
     dragon1.toss
-    puts("What would you like to do with your dragon? (Feed, Walk, Put to Bed, Toss, Rock, Exit)")
-    answer = gets.chomp
 
   elsif answer == "Rock"
     dragon1.rock
-    puts("What would you like to do with your dragon? (Feed, Walk, Put to Bed, Toss, Rock, Exit)")
-    answer = gets.chomp
+
+  elsif answer == "Exit"
+    puts("Exiting...")
 
   else
     puts("INVALID INPUT. Try again!")
-    puts("What would you like to do with your dragon? (Feed, Walk, Put to Bed, Toss, Rock, Exit)")
-    answer = gets.chomp
-
   end
 end

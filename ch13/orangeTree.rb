@@ -34,6 +34,10 @@ class OrangeTree
     return @height
   end
 
+  def age
+    return @age
+  end
+
   def count_the_oranges
     return @fruit
   end
@@ -47,33 +51,38 @@ end
 
 tree = OrangeTree.new
 
-puts("What would you like to do? (Grow, Pick, Count, Height, Exit)")
+puts("What would you like to do? (Grow, Pick, Count, Height, Age, Exit)")
 answer = gets.chomp
 
 while answer != "Exit"
   if answer == "Grow"
     tree.one_year_passes
-    puts("What would you like to do? (Grow, Pick, Count, Height, Exit)")
+    puts("What would you like to do? (Grow, Pick, Count, Height, Age, Exit)")
     answer = gets.chomp
 
   elsif answer == "Pick"
     tree.pick_an_orange
-    puts("What would you like to do? (Grow, Pick, Count, Height, Exit)")
+    puts("What would you like to do? (Grow, Pick, Count, Height, Age, Exit)")
     answer = gets.chomp
 
   elsif answer == "Count"
     puts(tree.count_the_oranges)
-    puts("What would you like to do? (Grow, Pick, Count, Height, Exit)")
+    puts("What would you like to do? (Grow, Pick, Count, Height, Age, Exit)")
     answer = gets.chomp
 
   elsif answer == "Height"
     puts(tree.height)
-    puts("What would you like to do? (Grow, Pick, Count, Height, Exit)")
+    puts("What would you like to do? (Grow, Pick, Count, Height, Age, Exit)")
     answer = gets.chomp
+
+  elsif answer == "Age"
+    puts(tree.age)
+    puts("What would you like to do? (Grow, Pick, Count, Height, Age, Exit)")
+    answer = gets.chomp 
 
   else
     puts("Invalid Input. Try again.")
-    puts("What would you like to do? (Grow, Pick, Count, Height, Exit)")
+    puts("What would you like to do? (Grow, Pick, Count, Height, Age, Exit)")
     answer = gets.chomp
   end
 end

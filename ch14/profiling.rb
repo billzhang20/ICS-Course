@@ -1,6 +1,6 @@
 
 def profile block_description, &block
-  puts("Would you like to turn profilling on (y or n)?")
+  puts("Would you like to turn profiling on (y or n)?")
   answer = gets.chomp
   if answer == "y"
     start_time = Time.new
@@ -8,7 +8,7 @@ def profile block_description, &block
     duration = Time.new - start_time
     puts "#{block_description}: #{duration} seconds"
   else
-    exit
+    block.call
   end
 end
 

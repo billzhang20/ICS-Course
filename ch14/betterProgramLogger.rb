@@ -21,7 +21,6 @@ logger 'Outer ' do
   logger "Return 6" do
 
     " "*$indent+ "6"*6
-    $indent = 0
-
   end
+  $indent = 0
 end
